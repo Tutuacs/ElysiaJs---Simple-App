@@ -1,10 +1,12 @@
-import swagger from "@elysiajs/swagger";
-import { Elysia, t } from "elysia";
+import { swagger } from "@elysiajs/swagger";
+import { cors } from "@elysiajs/cors";
+import { Elysia } from "elysia";
 import { UserHandler } from "./routes/user";
 
 const app = new Elysia()
+  .use(cors())
   .use(swagger())
-  .get("/", () => "AllPosts")
+  .get("/default", () => "AllPosts")
   .use(UserHandler)
 
 .listen(3000);
