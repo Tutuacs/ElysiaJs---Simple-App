@@ -7,11 +7,13 @@ export const validationSchema = {
     }, {
         description: "Expected an valid email",
     }),
-    detail: {
-        description: "Find a user by email",
-        summary: "Find user by email",
-        tags: ["User"],
-    },
+    // headers: t.Object({
+    //     Authorization: t.String(),
+    // }, {
+    //     description: "Should be the token 'Bearer {token}'",
+    //     examples: ["Bearer {token}"],
+    //     default: "Bearer {token}",
+    // }),
     response: {
         200: t.Object({
             id: UserID,
