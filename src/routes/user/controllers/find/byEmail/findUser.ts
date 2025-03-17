@@ -2,9 +2,10 @@ import Elysia from "elysia";
 import { validationSchema } from "./validation/types";
 
 export const findByEmailUserHandler = new Elysia({ name: "ByEmailUserHandler" })
-    .get("/email/:email", ({ params: { email } }) => {
+    .get("/email/:email", ({set, params: { email } }) => {
 
         if (email === "email@email.com") {
+            set.status = 404;
             return {
                 message: "User not found"
             }
